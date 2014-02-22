@@ -21,4 +21,7 @@
 
     <!-- make home button wake configurable in display settings -->
     <bool name="config_show_homeWake">true</bool>
+
+    <!--Allow advanced settings package to show-->
+    <bool name="has_advanced_settings">true</bool>
 </resources>

@@ -52,6 +52,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/d2lte/media/media_profiles.xml:system/etc/media_profiles.xml
 
+# DeviceSettings
+PRODUCT_PACKAGES += \
+    GalaxyS3Settings
+
 # Wifi
 PRODUCT_COPY_FILES += \
     device/samsung/d2lte/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
