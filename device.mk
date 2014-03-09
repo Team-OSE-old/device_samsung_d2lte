@@ -60,6 +60,11 @@ PRODUCT_COPY_FILES += \
        device/samsung/d2lte/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
        device/samsung/d2lte/keylayout/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl
 
+# Keyboard
+PRODUCT_COPY_FILES += \
+       device/samsung/d2lte/keyboard/libjni_latinime.so:system/lib/libjni_latinime.so \
+       device/samsung/d2lte/keyboard/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+
 # Media profile
 PRODUCT_COPY_FILES += \
        device/samsung/d2lte/media/media_profiles.xml:system/etc/media_profiles.xml
