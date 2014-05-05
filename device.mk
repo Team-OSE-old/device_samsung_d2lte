@@ -28,15 +28,15 @@ ifeq ($(filter liquid_apexqtmo liquid_expressatt,$(TARGET_PRODUCT)),)
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
+PRODUCT_COPY_FILES += \
+    device/samsung/d2lte/overlay/prebuilt/720.zip:system/media/bootanimation.zip
 PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=320
 else
 # These poor devices have smaller screens
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
-TARGET_SCREEN_HEIGHT := 800
-TARGET_SCREEN_WIDTH := 480
+PRODUCT_COPY_FILES += \
+    device/samsung/d2lte/overlay/prebuilt/480.zip:system/media/bootanimation.zip
 PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=240
 endif
 
