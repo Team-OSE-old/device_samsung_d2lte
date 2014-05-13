@@ -18,8 +18,8 @@
         "revision": "cm-11.0"
     },
     {
-        "remote": "ls",
-        "repository": "android_kernel_samsung_d2",
+        "remote": "gh",
+        "repository": "Deathly-Experience/deathly_d2_Kernel",
         "target_path": "kernel/samsung/d2",
         "revision": "Deathly-4.4"
     },
