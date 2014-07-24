@@ -101,6 +101,12 @@ on early-boot
     chown bluetooth net_bt_stack /proc/bluetooth/sleep/lpm
     chown bluetooth net_bt_stack /proc/bluetooth/sleep/btwrite
 
+    # bluetooth LPM
+    chmod 0220 /proc/bluetooth/sleep/lpm
+    chmod 0220 /proc/bluetooth/sleep/btwrite
+    chown bluetooth net_bt_stack /proc/bluetooth/sleep/lpm
+    chown bluetooth net_bt_stack /proc/bluetooth/sleep/btwrite
+
     chmod 0660 /dev/ttyHS2
     chown bluetooth bluetooth /dev/ttyHS2
 
@@ -108,6 +114,9 @@ on boot-pause
     exec system/bin/battery_charging
 
 on boot
+    # enable pulsing led on boot
+    write /sys/class/sec/led/led_pattern 6
+
     mount debugfs /sys/kernel/debug /sys/kernel/debug
     exec system/bin/btnvtool -O
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
@@ -273,6 +282,10 @@ on post-fs-data
     chmod 0666 /sys/devices/virtual/sec/sec_touchkey/touchkey_bln_enable
     chown system system /sys/class/sec/sec_touchkey/keypad_enable
     chmod 0660 /sys/class/sec/sec_touchkey/keypad_enable
+
+    # Color Calibration
+    chown root system /sys/class/misc/gammacontrol/tuner
+    chmod 0664 /sys/class/misc/gammacontrol/tuner
 
     #Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
     mkdir /data/system 0775 system system
@@ -739,3 +752,8 @@ service geomagneticd /system/bin/geomagneticd
 on property:ro.yas.enable=true
     start orientationd
     start geomagneticd
+
+# boot completed
+on property:dev.bootcomplete=1
+    # disable pulsing led on boot complete
+    exec /system/bin/sh /system/etc/init.led.sh

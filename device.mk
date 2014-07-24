@@ -23,8 +23,6 @@ $(call inherit-product-if-exists, vendor/samsung/d2lte/d2lte-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/samsung/d2lte/overlay
 
 # Boot animation and screen size
-
-ifeq ($(filter liquid_apexqtmo liquid_expressatt,$(TARGET_PRODUCT)),)
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -93,7 +91,7 @@ PRODUCT_PACKAGES += Torch
 
 # Wifi
 PRODUCT_PACKAGES += \
-    libnetliquiddiface \
+    libnetcmdiface \
     linville.key.pub.pem \
     regdbdump \
     regulatory.bin \
@@ -152,7 +150,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_2="" \
     persist.rild.nitz_short_ons_3="" \
     dalvik.vm.dexopt-data-only=0 \
-    otaupdater.otaid=liquidd2lte
 
 ifneq ($(TARGET_PRODUCT),liquid_apexqtmo)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -182,12 +179,6 @@ else
 endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
-
-# F2FS
-PRODUCT_PACKAGES += \
-    mkfs.f2fs \
-    fsck.f2fs \
-    fibmap.f2fs
 	
 # common msm8960
 $(call inherit-product, device/samsung/msm8960-common/msm8960.mk)
