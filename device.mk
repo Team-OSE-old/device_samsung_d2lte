@@ -24,6 +24,7 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/d2lte/overlay
 
 # Boot animation and screen size
 # Device uses high-density artwork where available
+ifeq ($(filter liquid_apexqtmo liquid_expressatt,$(TARGET_PRODUCT)),)
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 TARGET_SCREEN_HEIGHT := 1280
