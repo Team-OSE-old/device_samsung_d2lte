@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2012 The Android Open-Source Project
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,11 +15,6 @@
 #
 
 LOCAL_PATH := $(call my-dir)
-
-ifeq ($(BOARD_VENDOR),samsung)
-ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
-ifneq ($(filter d2lte apexqtmo expressatt d2dcm,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE),d2lte)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
-endif
 endif
