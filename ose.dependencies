@@ -1,32 +1,27 @@
 [
     {
-        "remote": "gh",
         "repository": "LiquidSmooth-Devices/android_device_samsung_msm8960-common",
         "target_path": "device/samsung/msm8960-common",
-        "revision": "kitkat"
+        "branch": "kitkat"
     },
     {
-        "remote": "cm",
-        "repository": "android_device_samsung_qcom-common",
+        "repository": "CyanogenMod/android_device_samsung_qcom-common",
         "target_path": "device/samsung/qcom-common",
-        "revision": "cm-11.0"
+        "branch": "cm-11.0"
     },
     {
-        "remote": "cm",
-        "repository": "android_hardware_samsung",
+        "repository": "CyanogenMod/android_hardware_samsung",
         "target_path": "hardware/samsung",
-        "revision": "cm-11.0"
+        "branch": "cm-11.0"
     },
     {
-        "remote": "gh",
-        "repository": "Deathly-Experience/deathly_d2_Kernel",
+        "repository": "CyanogenMod/android_kernel_samsung_d2",
         "target_path": "kernel/samsung/d2",
-        "revision": "Deathly-4.4"
+        "branch": "cm-11.0"
     },
     {
-        "remote": "ls",
-        "repository": "proprietary_vendor_samsung",
+        "repository": "LiquidSmooth/proprietary_vendor_samsung",
         "target_path": "vendor/samsung",
-        "revision": "kitkat"
+        "branch": "kitkat"
     }
 ]
